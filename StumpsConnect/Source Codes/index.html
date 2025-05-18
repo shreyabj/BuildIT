@@ -1,0 +1,1350 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>StumpsConnect</title>
+        <link rel="stylesheet" href="home.css" />
+        <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="logo.jpg" />
+            </div>
+            <nav>
+                <a href="#section1" class="nav-tab">HOME</a>
+                <a href="#section2" class="nav-tab">ABOUT US</a>
+                <a href="#section3" class="nav-tab">BLOGS</a>
+                <a href="#section4" class="nav-tab">TOURNAMENTS</a>
+                <a href="#section5" class="nav-tab">STORE</a>
+                <a href="#section6" class="nav-tab">CONTACT US</a>
+            </nav>
+            <a href="login.html" class="logout"><i class="fas fa-sign-out-alt"></i></a>
+        </header>
+
+        <section id="section1" class="home">
+            <div class="overlay"></div>
+            <div class="home-content">
+                <h1>Welcome to StumpsConnect</h1>
+                <p class="p">
+                    Your Ultimate Destination for Cricket Tournaments
+                </p>
+                <div class="buttons">
+                    <button class="animated-button" ahref="#section4">
+                        <svg
+                            viewBox="0 0 24 24"
+                            class="arr-2"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                            ></path>
+                        </svg>
+                        <span class="text"
+                            ><a
+                                href="conduct-form.html"
+                                style="color: white; text-decoration: none"
+                                >Host a tournament</a
+                            ></span
+                        >
+                        <span class="circle"></span>
+                        <svg
+                            viewBox="0 0 24 24"
+                            class="arr-1"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                            ></path>
+                        </svg>
+                    </button>
+                    <button class="animated-button2">
+                        <svg
+                            viewBox="0 0 24 24"
+                            class="arr-2"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                            ></path>
+                        </svg>
+                        <span class="text"
+                            ><a
+                                href="#section4"
+                                style="color: white; text-decoration: none"
+                                >Join a tournament</a
+                            ></span
+                        >
+                        <span class="circle"></span>
+                        <svg
+                            viewBox="0 0 24 24"
+                            class="arr-1"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                            ></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="section2">
+            <div class="about-container">
+                <div class="content-box">
+                    <h2 style="margin-bottom: 10px">ABOUT US</h2>
+                    <div class="tabs">
+                        <div class="tab active" data-content="mission">
+                            Mission
+                        </div>
+                        <div class="tab" data-content="vision">Vision</div>
+                        <div class="tab" data-content="values">Values</div>
+                    </div>
+                    <div class="content">
+                        <h3 id="content-title"></h3>
+                        <p id="content-text">
+                            To create an immersive, user-friendly platform that
+                            brings cricket enthusiasts together by simplifying
+                            tournament organization, management, and engagement
+                            for players, organizers, and fans.
+                        </p>
+                        <button class="read-more-btn">Read More</button>
+                    </div>
+                </div>
+                <div class="image-box">
+                    <img src="about.png" alt="Cricket Fever Image" />
+                </div>
+            </div>
+        </section>
+
+        <section id="section3">
+            <div class="container">
+                <div class="blog-header">
+                    <h1>Our Latest Blogs</h1>
+                    <div class="search-container">
+                        <input
+                            type="text"
+                            placeholder="Search"
+                            class="search-input"
+                        />
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <img src="1.jpeg" alt="Blog 1" />
+                        <div class="content">
+                            <p class="date">12 October, 2023</p>
+                            <p class="author">Noah Smith</p>
+                            <h3>
+                                Mastering the Cricket Basics: A Beginner's Guide
+                            </h3>
+                            <button class="read-more">
+                                Read More <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <img src="2.jpeg" alt="Blog 2" />
+                        <div class="content">
+                            <p class="date">12 October, 2023</p>
+                            <p class="author">Noah Smith</p>
+                            <h3>
+                                Understanding the Rules: A Comprehensive Guide
+                                to Cricket Laws
+                            </h3>
+                            <button class="read-more">
+                                Read More <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <img src="3.jpeg" alt="Blog 3" />
+                        <div class="content">
+                            <p class="date">12 October, 2023</p>
+                            <p class="author">Noah Smith</p>
+                            <h3>
+                                Cricket Fielding Fundamentals: Catching and
+                                Field Placement
+                            </h3>
+                            <button class="read-more">
+                                Read More <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <img src="4.jpeg" alt="Blog 4" />
+                        <div class="content">
+                            <p class="date">12 October, 2023</p>
+                            <p class="author">Noah Smith</p>
+                            <h3>
+                                Famous Cricket Rivalries: A Look at Historic
+                                Matches
+                            </h3>
+                            <button class="read-more">
+                                Read More <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <img src="5.jpeg" alt="Blog 5" />
+                        <div class="content">
+                            <p class="date">12 October, 2023</p>
+                            <p class="author">Noah Smith</p>
+                            <h3>
+                                The Evolution of Cricket Equipment and
+                                Technology
+                            </h3>
+                            <button class="read-more">
+                                Read More <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <img src="6.jpeg" alt="Blog 6" />
+                        <div class="content">
+                            <p class="date">12 October, 2023</p>
+                            <p class="author">Noah Smith</p>
+                            <h3>
+                                Cricket Fitness and Conditioning: Training Like
+                                a Pro
+                            </h3>
+                            <button class="read-more">
+                                Read More <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="load-more">Show More</button>
+            </div>
+        </section>
+
+        <section id="section4">
+            <h1 style="text-align: left; margin-left: 60px; margin-top: -50px">
+                Tournaments
+            </h1>
+            <select id="sortFilter"  onchange="applySort()" style=" 
+            margin: 0px; 
+       padding: 10px 10px; 
+       border: 2px solid #020202; 
+       border-radius: 20px; 
+       font-size: 16px; 
+       color: #333; 
+       outline: none; 
+       cursor: pointer; 
+       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+       transition: box-shadow 0.3s;
+       display: inline-block;
+       margin-left: 1000px;margin-top: -180px;
+      ">
+               <option value="all">All Matches</option>
+               <option value="latest">Date: Latest First</option>
+               <option value="oldest">Date: Oldest First</option>
+               <option value="feesLowToHigh">Fees: Low to High</option>
+               <option value="feesHighToLow">Fees: High to Low</option>
+               <option value="completed">Completed Matches</option>
+           </select>
+           
+   
+   
+            <div class="tournament-container">
+               
+                <div class="card-container">
+                    <div class="team-section">
+                        <img
+                            src="salford cc.png"
+                            id="image"
+                            alt="match 1"
+                            height="300px"
+                            width="500px"
+                            style="
+                                margin-left: 10px;
+                                border-radius: 10px;
+                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                            "
+                        />
+                    </div>
+                    <div
+                        class="match-title"
+                        id="matchTitle"
+                        style="margin-top: 20px; color: white"
+                    >
+                        Salford & CO
+                    </div>
+                     <div id="tournamentAlerts" style="display: none;    background-color: transparent; 
+                     color: #ffffff; 
+                     margin-bottom: 15px;
+                     font-family: 'Arial', sans-serif;
+                     text-align: center;
+                     box-shadow: 0 2px 8px rgba(177, 174, 174, 0.2);"> <fa class="fa fa-exclamation-triangle" style="color: red;"></fa> Team ABC is requesting 2 spinners <button class="accept-button" onclick="acceptRequest()">Accept</button></div>
+                     <div id="tournamentAlerts2" style="display: none; background-color: transparent;"></div>
+                    <div class="divider"></div>
+                    <div class="match-info">
+                        <div class="match-time">
+                            <i class="icon-time"></i>
+                            <span
+                                class="time"
+                                id="fees"
+                                style="margin-left: 20px"
+                                >Fees - Rs. 1,500/-</span
+                            ><br />
+                            <span class="date" id="matchDate"
+                                ><i class="fa fa-calendar"></i> 24 Oct,
+                                2024</span
+                            >
+                        </div>
+                        <div
+                            class="location-info"
+                            style="margin-top: -35px; margin-right: 50px"
+                        >
+                            <i class="fa fa-location-dot"></i>
+                            <span
+                                class="location"
+                                id="venue"
+                                style="margin-left: 5px"
+                                >Wankhede Stadium</span
+                            >
+                        </div>
+                    </div>
+                    <div class="match-type" id="matchType">
+                        <span class="type">Test match</span>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="match-join">
+
+                            <a href="register-form.html"><button class="join-button" data-match-id="1"><span style="color: white;">Join Now</span></button></a>
+
+
+                        <a href="book.html"
+                            ><button class="join-button">
+                                <span>Book Tickets</span>
+                            </button></a
+                        >
+                    </div>
+                </div>
+
+                <div class="card-container">
+                    <div class="team-section">
+                        <img
+                            src="alumni cc.png"
+                            id="image"
+                            alt="match 2"
+                            height="300px"
+                            width="500px"
+                            style="
+                                margin-left: 10px;
+                                border-radius: 10px;
+                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                            "
+                        />
+                    </div>
+                    <div
+                        class="match-title"
+                        id="matchTitle"
+                        style="margin-top: 20px; color: white"
+                    >
+                        VJIM Alumni
+                    </div>
+                    <div class="divider" style="margin-top: 25px"></div>
+                    <div class="match-info">
+                        <div class="match-time">
+                            <i class="icon-time"></i>
+                            <span
+                                class="time"
+                                id="fees"
+                                style="margin-left: 20px"
+                            >
+                                Fees - Rs. 1,000/-</span
+                            ><br />
+                            <span class="date" id="matchDate"
+                                ><i class="fa fa-calendar"></i> 26 Oct,
+                                2024</span
+                            >
+                        </div>
+                        <div class="location-info" style="margin-top: -35px">
+                            <i class="fa fa-location-dot"></i>
+                            <span
+                                class="location"
+                                id="venue"
+                                style="margin-left: 5px"
+                                >Rajiv Gandhi International Cricket
+                                Stadium</span
+                            >
+                        </div>
+                    </div>
+                    <div class="match-type" id="matchType">
+                        <span class="type">T20 match</span>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="match-join">
+                            <a href="register-form.html"><button class="join-button" data-match-id="2"><span style="color: white;">Join Now</span></button></a>
+
+                        <a href="book.html"
+                            ><button class="join-button">
+                                <span>Book Tickets</span>
+                            </button></a
+                        >
+                    </div>
+                </div>
+
+                <div class="card-container">
+                    <div class="team-section">
+                        <img src="cric_tournament.jpg" id="image" alt="match 3" height="300px" width="500px" style="
+                        margin-left: 10px;
+                        border-radius: 10px;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                      " />
+                    </div>
+                    <div class="match-title" id="matchTitle" style="margin-top: 20px; color: white">
+                        The Cricket Conclave
+                    </div>
+                    <div class="divider" style="margin-top: 25px"></div>
+                    <div class="match-info">
+                        <div class="match-time">
+                            <i class="icon-time"></i>
+                            <span class="time" id="fees" style="margin-left: 20px">
+                                Fees - Rs. 2,000/-</span><br />
+                            <span class="date" id="matchDate"><i class="fa fa-calendar"></i> 26 Nov, 2024</span>
+                        </div>
+                        <div class="location-info" style="margin-top: -35px">
+                            <i class="fa fa-location-dot"></i>
+                            <span class="location" id="venue" style="margin-left: 5px">Jawaharlal Nehru Stadium</span>
+                        </div>
+                    </div>
+                    <div class="match-type" id="matchType">
+                        <span class="type">T20 match</span>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="match-join">
+                        <a href="register-form.html"><button class="join-button"><span style="color: white;">Join Now</span></button></a>
+                        <a href="book.html"><button class="join-button"><span>Book Tickets</span></button></a>
+                    </div>
+                </div>
+    
+    
+                <div class="card-container">
+                    <div class="team-section">
+                        <img src="cricket_league.jpg" id="image" alt="match 4" height="300px" width="500px" style="
+                        margin-left: 10px;
+                        border-radius: 10px;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                      " />
+                    </div>
+                    <div class="match-title" id="matchTitle" style="margin-top: 20px; color: white">
+                        Noble Innings
+                    </div>
+                    <div class="divider" style="margin-top: 25px"></div>
+                    <div class="match-info">
+                        <div class="match-time">
+                            <i class="icon-time"></i>
+                            <span class="time" id="fees" style="margin-left: 20px">
+                                Fees - Rs. 1,700/-</span><br />
+                            <span class="date" id="matchDate"><i class="fa fa-calendar"></i> 24 Nov, 2024</span>
+                        </div>
+                        <div class="location-info" style="margin-top: -35px">
+                            <i class="fa fa-location-dot"></i>
+                            <span class="location" id="venue" style="margin-left: 5px">Eden Gardens</span>
+                        </div>
+                    </div>
+                    <div class="match-type" id="matchType">
+                        <span class="type" style="margin-left: 80px;">ODI</span>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="match-join">
+                        <a href="register-form.html"><button class="join-button"><span style="color: white;">Join Now</span></button></a>
+                        <a href="book.html"><button class="join-button"><span>Book Tickets</span></button></a>
+                    </div>
+                </div>
+    
+    
+    
+    
+
+                <!-- Last two tournaments with only the image and join button -->
+                <div class="card-container">
+                    <div class="team-section">
+                        <img
+                            src="your cc.png"
+                            id="image"
+                            alt="match 3"
+                            height="300px"
+                            width="500px"
+                            style="
+                                margin-left: 10px;
+                                border-radius: 10px;
+                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                            "
+                        />
+                    </div>
+                    <div
+                        class="match-title"
+                        id="matchTitle"
+                        style="margin-top: 20px; color: white"
+                    >
+                        Your Club Tournament
+                    </div>
+                    <div class="divider"></div>
+                    <div class="match-join">
+                        <a href="leaderboard.html"
+                            ><button class="join-button">
+                                <span>Know More</span>
+                            </button></a
+                        >
+                    </div>
+                </div>
+
+                <div class="card-container">
+                    <div class="team-section">
+                        <img
+                            src="sports cc.png"
+                            id="image"
+                            alt="match 4"
+                            height="300px"
+                            width="500px"
+                            style="
+                                margin-left: 10px;
+                                border-radius: 10px;
+                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                            "
+                        />
+                    </div>
+                    <div
+                        class="match-title"
+                        id="matchTitle"
+                        style="margin-top: 20px; color: white"
+                    >
+                        Cricket Warriors League
+                    </div>
+                    <div class="divider"></div>
+                    <div class="match-join">
+                        <a href="leaderboard.html"
+                            ><button class="join-button">
+                                <span>Know More</span>
+                            </button></a
+                        >
+                    </div>
+                </div>
+            </div>
+            <button class="load-more">Show More</button>
+        </section>
+
+        <section id="section5">
+            <div id="merchandise-section">
+                <h1 style="text-align: center; margin-top: 20px">
+                    Merchandise
+                </h1>
+
+                <!-- Filter Buttons -->
+                <div
+                    class="filter-buttons"
+                    style="text-align: center; margin: 20px 0"
+                >
+                    <button class="filter-btn type1" data-category="all">
+                        <span class="btn-text">All</span>
+                    </button>
+                    <button class="filter-btn type1" data-category="jersey">
+                        <span class="btn-text">Jerseys</span>
+                    </button>
+                    <button class="filter-btn type1" data-category="bat">
+                        <span class="btn-text">Bats</span>
+                    </button>
+                    <button class="filter-btn type1" data-category="cap">
+                        <span class="btn-text">Caps</span>
+                    </button>
+                    <button class="filter-btn type1" data-category="gloves">
+                        <span class="btn-text">Gloves</span>
+                    </button>
+                    <button class="filter-btn type1" data-category="shoes">
+                        <span class="btn-text">Shoes</span>
+                    </button>
+                    <button class="filter-btn type1" data-category="helmet">
+                        <span class="btn-text">Helmets</span>
+                    </button>
+                    <button class="filter-btn type1" data-category="ball">
+                        <span class="btn-text">Balls</span>
+                    </button>
+                    <button class="filter-btn type1" data-category="stumps">
+                        <span class="btn-text">Stumps</span>
+                    </button>
+                </div>
+
+                <div class="merchandise-container">
+                    <!-- Card 1 -->
+                    <div class="merch-card" data-category="jersey">
+                        <img
+                            src="jersey1.webp"
+                            alt="Cricket Jersey 1"
+                            class="merch-image"
+                        />
+                        <div class="merch-info">
+                            <h3 class="merch-name">Tournament Jersey</h3>
+                            <p class="merch-price">₹1,499</p>
+                            <button class="buy-btn">Buy Now</button>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="merch-card" data-category="jersey">
+                        <img
+                            src="jersey2.webp"
+                            alt="Cricket Jersey 2"
+                            class="merch-image"
+                        />
+                        <div class="merch-info">
+                            <h3 class="merch-name">Team Spirit Jersey</h3>
+                            <p class="merch-price">₹1,299</p>
+                            <button class="buy-btn">Buy Now</button>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="merch-card" data-category="bat">
+                        <img
+                            src="bat.webp"
+                            alt="Cricket Bat"
+                            class="merch-image"
+                        />
+                        <div class="merch-info">
+                            <h3 class="merch-name">Cricket Bat</h3>
+                            <p class="merch-price">₹2,999</p>
+                            <button class="buy-btn">Buy Now</button>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="merch-card hidden-card" data-category="cap">
+                        <img
+                            src="cap1.webp"
+                            alt="Cricket Cap"
+                            class="merch-image"
+                        />
+                        <div class="merch-info">
+                            <h3 class="merch-name">Cricket Cap</h3>
+                            <p class="merch-price">₹499</p>
+                            <button class="buy-btn">Buy Now</button>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="merch-card hidden-card" data-category="gloves">
+                        <img
+                            src="gloves.webp"
+                            alt="Batting Gloves"
+                            class="merch-image"
+                        />
+                        <div class="merch-info">
+                            <h3 class="merch-name">Batting Gloves</h3>
+                            <p class="merch-price">₹1,199</p>
+                            <button class="buy-btn">Buy Now</button>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="merch-card hidden-card" data-category="shoes">
+                        <img
+                            src="shoes.webp"
+                            alt="Cricket Shoes"
+                            class="merch-image"
+                        />
+                        <div class="merch-info">
+                            <h3 class="merch-name">Cricket Shoes</h3>
+                            <p class="merch-price">₹2,499</p>
+                            <button class="buy-btn">Buy Now</button>
+                        </div>
+                    </div>
+                    <!-- Card 7 -->
+                    <div class="merch-card hidden-card" data-category="helmet">
+                        <img
+                            src="helmet.webp"
+                            alt="Cricket Helmet"
+                            class="merch-image"
+                        />
+                        <div class="merch-info">
+                            <h3 class="merch-name">Cricket Helmet</h3>
+                            <p class="merch-price">₹1,799</p>
+                            <button class="buy-btn">Buy Now</button>
+                        </div>
+                    </div>
+                    <!-- Card 8 -->
+                    <div class="merch-card hidden-card" data-category="jersey">
+                        <img
+                            src="jersey3.webp"
+                            alt="Practice Jersey"
+                            class="merch-image"
+                        />
+                        <div class="merch-info">
+                            <h3 class="merch-name">Practice Jersey</h3>
+                            <p class="merch-price">₹999</p>
+                            <button class="buy-btn">Buy Now</button>
+                        </div>
+                    </div>
+                    <!-- Card 9 -->
+                    <div class="merch-card hidden-card" data-category="cap">
+                        <img
+                            src="cap2.webp"
+                            alt="Team Cap"
+                            class="merch-image"
+                        />
+                        <div class="merch-info">
+                            <h3 class="merch-name">Team Cap</h3>
+                            <p class="merch-price">₹599</p>
+                            <button class="buy-btn">Buy Now</button>
+                        </div>
+                    </div>
+                    <!-- Card 10 -->
+                    <div class="merch-card hidden-card" data-category="kit">
+                        <img
+                            src="bag.webp"
+                            alt="Cricket Kit Bag"
+                            class="merch-image"
+                        />
+                        <div class="merch-info">
+                            <h3 class="merch-name">Cricket Kit Bag</h3>
+                            <p class="merch-price">₹3,999</p>
+                            <button class="buy-btn">Buy Now</button>
+                        </div>
+                    </div>
+                    <!-- Card 11 -->
+                    <div class="merch-card hidden-card" data-category="ball">
+                        <img
+                            src="ball.webp"
+                            alt="Cricket Ball"
+                            class="merch-image"
+                        />
+                        <div class="merch-info">
+                            <h3 class="merch-name">Official Cricket Ball</h3>
+                            <p class="merch-price">₹799</p>
+                            <button class="buy-btn">Buy Now</button>
+                        </div>
+                    </div>
+                    <!-- Card 12 -->
+                    <div class="merch-card hidden-card" data-category="stumps">
+                        <img
+                            src="stumps.webp"
+                            alt="Stumps Set"
+                            class="merch-image"
+                        />
+                        <div class="merch-info">
+                            <h3 class="merch-name">Stumps Set</h3>
+                            <p class="merch-price">₹1,999</p>
+                            <button class="buy-btn">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="load-more1">Show More</button>
+            </div>
+        </section>
+
+        <section id="section0" class="faqs">
+            <h1 style="text-align: center; margin-bottom: 30px">FAQs</h1>
+            <div class="faq-container">
+                <div class="faq">
+                    <h3 class="question">
+                        1. What is the format of the tournament?
+                    </h3>
+                    <p class="answer">
+                        The tournament will follow a round-robin format during
+                        the group stages, where each team plays against all
+                        other teams in their group. The top teams from each
+                        group will advance to the knockout rounds, culminating
+                        in a grand final.
+                    </p>
+                </div>
+                <div class="faq">
+                    <h3 class="question">
+                        2. What happens if it rains on match day?
+                    </h3>
+                    <p class="answer">
+                        In case of rain, we have reserved backup days for
+                        crucial matches. For group-stage games, the match may be
+                        shortened (Duckworth-Lewis method) or declared a draw
+                        depending on the situation. Updates will be communicated
+                        via our website and social media channels.
+                    </p>
+                </div>
+                <div class="faq">
+                    <h3 class="question">
+                        3.What are the prizes for the winners?
+                    </h3>
+                    <p class="answer">
+                        The winning team will receive a trophy, medals, and a
+                        cash prize of 20,000/-. Additionally, awards for Best
+                        Batsman, Best Bowler, and Player of the Tournament will
+                        be presented during the closing ceremony.
+                    </p>
+                </div>
+                <div class="faq">
+                    <h3 class="question">4. Is there a fee to participate?</h3>
+                    <p class="answer">
+                        Participation fees vary for each tournament. Check the
+                        tournament details for exact fees.
+                    </p>
+                </div>
+                <div class="faq">
+                    <h3 class="question">
+                        5. Can I edit my tournament details after submission?
+                    </h3>
+                    <p class="answer">
+                        Currently, tournament details cannot be edited after
+                        submission. Please contact support for assistance.
+                    </p>
+                </div>
+                <div class="faq">
+                    <h3 class="question">
+                        6. Are there any sponsorship or logo placement
+                        restrictions on uniforms?
+                    </h3>
+                    <p class="answer">
+                        Yes, the logos of all our sponsors for the respective
+                        tournamnets will be printed on the uniforms.
+                    </p>
+                </div>
+                <div class="faq">
+                    <h3 class="question">
+                        7. Is StumpsConnect available globally?
+                    </h3>
+                    <p class="answer">
+                        Yes, StumpsConnect is accessible worldwide for cricket
+                        enthusiasts and organizers.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="section6">
+            <footer>
+                <div class="footer-container">
+                    <div class="footer-logo">
+                        <img src="logo.jpg" alt="Logo" width="100" />
+                    </div>
+                    <div class="footer-menu">
+                        <h3>MENU</h3>
+                        <ul>
+                            <li><a href="#section1">Home</a></li>
+                            <li><a href="#section2">About Us</a></li>
+                            <li><a href="#section3">Blogs</a></li>
+                            <li><a href="#section4">Tournaments</a></li>
+                            <li><a href="#section5">Merchandise</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h3>CONTACT US</h3>
+                        <div class="contact-item">
+                            <img src="telephone.png" alt="Telephone" />
+                            <p>+123 345-434-348</p>
+                        </div>
+                        <div class="contact-item">
+                            <img src="email.png" alt="Email" />
+                            <p>stumpsconnect@gmail.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <img src="pin.png" alt="Location" />
+                            <p>
+                                123, Main Street, StumpsConnect Office, Mysuru
+                                570017
+                            </p>
+                        </div>
+                    </div>
+                    <div class="footer-social">
+                        <h3 style="margin-left: 20px">FOLLOW US</h3>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </footer>
+            <div class="footer-bottom">
+                <p>©2024 STUMPSCONNECT. All Rights Reserved.</p>
+            </div>
+        </section>
+        <div class="chatbot-icon" onclick="toggleChatbot()">💬</div>
+        <div class="chatbot-container" id="chatbot">
+            <div class="chat-header">
+                <i class="fa fa-times" onclick="toggleChatbot()"></i>
+                <span style="margin: 0 180px 0 180px">StumpBot</span>
+                <i class="fa fa-expand" onclick="toggleFullscreen()"></i>
+            </div>
+            <div class="chat-messages" id="chat-messages"></div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Ask me anything..." onkeypress="handleKeyPress(event)" />
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </body>
+
+    <script>
+           document.addEventListener("DOMContentLoaded", function () {
+               // Retrieve the new tournament details
+               const newTournament = JSON.parse(localStorage.getItem("newTournament"));
+
+               if (newTournament) {
+                   const cardContainer = document.querySelector(".tournament-container");
+
+                   const newCard = document.createElement("div");
+                   newCard.className = "card-container";
+                   
+                   newCard.innerHTML = `
+                   <div class="team-section">
+                       <img src="build-it.jpg" alt="${newTournament.matchTitle}" height="300px" width="500px" style="margin-left: 10px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)">
+                   </div>
+                   <div class="match-title" style="margin-top: 20px; color: white;">${newTournament.matchTitle}</div>
+                   <div class="divider" style="margin-top: 25px;"></div>
+                   <div class="match-info">
+                       <div class="match-time">
+                           <i class="icon-time"></i>
+                           <span class="time" style="margin-left: 20px;">Fees - Rs. ${newTournament.fees}/-</span><br>
+                           <span class="date"><i class="fa fa-calendar"></i> ${new Date(newTournament.matchDate).toLocaleDateString()}</span>
+                       </div>
+                       <div class="location-info" style="margin-top: -35px;">
+                           <i class="fa fa-location-dot"></i>
+                           <span class="location" style="margin-left: 5px;">${newTournament.venue}</span>
+                       </div>
+                   </div>
+                   <div class="match-type">
+                       <span class="type" style="margin-left: 70px;">${newTournament.matchType} match</span>
+                   </div>
+                   <div class="divider"></div>
+                   <div class="match-join">
+                       <a href="register-form.html"><button class="join-button">Join Now</button></a>
+                   </div>
+               `;
+
+                   cardContainer.appendChild(newCard);
+                   localStorage.removeItem("newTournament");
+               }
+           });
+
+           document.addEventListener("DOMContentLoaded", function () {
+               const alertCard = document.getElementById("tournamentAlerts2");
+
+               // Retrieve data from localStorage
+               const playerRequests = localStorage.getItem("playerRequests");
+
+               // Check if there's any stored request
+               if (playerRequests) {
+                   console.log("Player request found in localStorage:", playerRequests); // Debugging line
+
+                   // Append content and button to the alert div
+                   alertCard.innerHTML = `${playerRequest.TeamName} is requesting ${playerRequest.numberOfRequestedPlayers} ${playerRequest.playerType}`;
+               } else {
+                   console.log("No player request found in localStorage."); // Debugging line
+               }
+           });
+
+           document.querySelectorAll(".filter-btn").forEach((button) => {
+               button.addEventListener("click", () => {
+                   const category = button.getAttribute("data-category");
+                   const cards = document.querySelectorAll(".merch-card");
+
+                   cards.forEach((card) => {
+                       if (category === "all" || card.getAttribute("data-category") === category) {
+                           card.style.display = "block";
+                       } else {
+                           card.style.display = "none";
+                       }
+                   });
+               });
+           });
+
+           document.addEventListener("DOMContentLoaded", () => {
+               const hiddenCards = document.querySelectorAll(".hidden-card");
+               const loadMoreBtn = document.querySelector(".load-more1");
+
+               loadMoreBtn.addEventListener("click", () => {
+                   const isExpanded = loadMoreBtn.textContent === "Show Less";
+
+                   if (isExpanded) {
+                       hiddenCards.forEach((card) => {
+                           card.style.display = "none";
+                       });
+                       loadMoreBtn.textContent = "Show More";
+                   } else {
+                       hiddenCards.forEach((card) => {
+                           card.style.display = "block";
+                       });
+                       loadMoreBtn.textContent = "Show Less";
+                   }
+               });
+           });
+
+           // Join Team function
+           function joinTeam() {
+               alert("Your interest to join the team has been recorded!");
+           }
+        if (localStorage.getItem("showBox") === "true") {
+            document.getElementById("tournamentAlerts").style.display = "block";
+            localStorage.removeItem("showBox"); // Clear the signal
+        }
+
+        document.querySelectorAll("nav a,.footer-menu a, .text a[href^='#']").forEach(link => {
+          link.addEventListener("click", function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute("href")).scrollIntoView({
+              behavior: "smooth"
+            });
+          });
+        });
+
+        const tabs = document.querySelectorAll('.tab');
+        const contentTitle = document.getElementById('content-title');
+        const contentText = document.getElementById('content-text');
+
+        const contents = {
+          mission: {
+            title: "",
+            text: "To create an immersive, user-friendly platform that brings cricket enthusiasts together by simplifying tournament organization, management, and engagement for players, organizers, and fans."
+          },
+          vision: {
+            title: "",
+            text: "To be the premier digital destination for local and international cricket tournaments, fostering a dynamic community that shares the thrill and spirit of cricket worldwide."
+          },
+          values: {
+            title: "",
+            text: "At STUMPSCONNECT, We’re passionate about cricket, committed to transparent processes, and focused on delivering innovative tools for seamless tournament management."
+          }
+        };
+
+        tabs.forEach(tab => {
+          tab.addEventListener('click', function() {
+            tabs.forEach(t => {
+              t.classList.remove('active');
+              t.style.backgroundColor = '';
+              t.style.color = '';
+            });
+            this.classList.add('active');
+
+            const selectedContent = this.getAttribute('data-content');
+            contentTitle.innerText = contents[selectedContent].title;
+            contentText.innerText = contents[selectedContent].text;
+          });
+
+          tab.addEventListener('mouseenter', function() {
+            if (!this.classList.contains('active')) {
+              this.style.backgroundColor = '#009688';
+              this.style.color = 'white';
+            }
+          });
+
+          tab.addEventListener('mouseleave', function() {
+            if (!this.classList.contains('active')) {
+              this.style.backgroundColor = '';
+              this.style.color = '';
+            }
+          });
+        });
+
+        const searchInput = document.querySelector('.search-input');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        searchInput.addEventListener('input', function() {
+          const searchTerm = searchInput.value.toLowerCase();
+
+          blogCards.forEach(card => {
+            const title = card.querySelector('h3').innerText.toLowerCase();
+            const author = card.querySelector('.author').innerText.toLowerCase();
+            const date = card.querySelector('.date').innerText.toLowerCase();
+
+
+            if (title.includes(searchTerm) || author.includes(searchTerm) || date.includes(searchTerm)) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+
+
+        const searchTerms = [
+          { name: "Salford & CO" },
+          { name: "VJIM ALUMNI" },
+          { name: "Your Club" },
+          { name: "Sports Club" }
+        ];
+
+        const fuse = new Fuse(searchTerms, {
+          keys: ["name"],
+          threshold: 0.4, // Adjust this for stricter or looser matching
+        });
+
+        const suggestions = document.getElementById("suggestions");
+
+        searchInput.addEventListener("input", () => {
+          const query = searchInput.value;
+          const results = fuse.search(query);
+
+          suggestions.innerHTML = "";
+
+          // Show new suggestions
+          results.forEach(result => {
+            const suggestionItem = document.createElement("div");
+            suggestionItem.textContent = result.item.name;
+            suggestionItem.classList.add("suggestion-item");
+
+
+            suggestionItem.addEventListener("click", () => {
+              searchInput.value = result.item.name;
+              suggestions.innerHTML = "";
+            });
+
+            suggestions.appendChild(suggestionItem);
+          });
+        });
+
+
+        document.addEventListener("click", (e) => {
+          if (!e.target.closest(".tournament-search")) {
+            suggestions.innerHTML = "";
+          }
+        });
+
+        const faqs = document.querySelectorAll('.faq');
+
+
+        faqs.forEach(faq => {
+          faq.addEventListener('click', () => {
+            faq.classList.toggle('active');
+          });
+        });
+
+        function applySort() {
+          const filterOption = document.getElementById("sortFilter").value;
+          const cards = Array.from(document.querySelectorAll(".card-container"));
+
+          switch (filterOption) {
+              case 'all':
+                  cards.forEach(card => card.style.display = "block");
+                  break;
+
+              case 'completed':
+                  cards.forEach(card => {
+                      const matchDate = card.querySelector("#matchDate")?.textContent.trim();
+                      const fees = card.querySelector("#fees")?.textContent.trim();
+                      if (!matchDate && !fees) {
+                          card.style.display = "block";
+                      } else {
+                          card.style.display = "none";
+                      }
+                  });
+                  break;
+
+              case 'latest':
+                  cards.sort((a, b) => {
+                      const dateA = new Date(a.querySelector("#matchDate")?.textContent.trim());
+                      const dateB = new Date(b.querySelector("#matchDate")?.textContent.trim());
+                      return dateB - dateA;
+                  });
+                  updateCardDisplay(cards);
+                  break;
+
+              case 'oldest':
+                  cards.sort((a, b) => {
+                      const dateA = new Date(a.querySelector("#matchDate")?.textContent.trim());
+                      const dateB = new Date(b.querySelector("#matchDate")?.textContent.trim());
+                      return dateA - dateB;
+                  });
+                  updateCardDisplay(cards);
+                  break;
+
+              case 'feesLowToHigh':
+                  cards.sort((a, b) => {
+                      const feesA = a.querySelector("#fees")?.textContent.trim().replace(/[^0-9.-]+/g, '');
+                      const feesB = b.querySelector("#fees")?.textContent.trim().replace(/[^0-9.-]+/g, '');
+
+
+                      const feeValueA = feesA === '' ? Infinity : parseFloat(feesA);
+                      const feeValueB = feesB === '' ? Infinity : parseFloat(feesB);
+
+                      return feeValueB - feeValueA;
+                  });
+                  updateCardDisplay(cards);
+                  break;
+
+              case 'feesHighToLow':
+                  cards.sort((a, b) => {
+                      const feesA = a.querySelector("#fees")?.textContent.trim().replace(/[^0-9.-]+/g, '');
+                      const feesB = b.querySelector("#fees")?.textContent.trim().replace(/[^0-9.-]+/g, '');
+
+
+                      const feeValueA = feesA === '' ? -Infinity : parseFloat(feesA);
+                      const feeValueB = feesB === '' ? -Infinity : parseFloat(feesB);
+
+                      return feeValueA - feeValueB;
+                  });
+                  updateCardDisplay(cards);
+                  break;
+
+
+          }
+        }
+
+
+        function updateCardDisplay(cards) {
+          const container = document.querySelector(".tournament-container");
+          container.innerHTML = ''; 
+          cards.forEach(card => container.appendChild(card));
+        }
+
+        function acceptRequest() {
+    const alertDiv = document.getElementById("tournamentAlerts");
+
+    // Replace content with success message
+    alertDiv.innerHTML = `
+        <div class="success-container">
+            <fa class="fa fa-check-circle"></fa> Accepted!
+            <button class="know-more-button" onclick="knowMore()">Know More</button>
+        </div>
+    `;
+
+    // Optional: Add fade-out effect (if needed, remove this if not required)
+    alertDiv.style.animation = "fade-in 1s";
+
+     function knowMore() {
+            // Redirect or show more information when "Know More" is clicked
+            alert("Here you can add more functionality for the 'Know More' button!");
+        }
+}
+
+        let chatbotOpen = false;
+        let fullScreen = false;
+        let seatType = "";
+        let numberOfPeople = "";
+        let tournament = "";
+
+        function toggleChatbot() {
+            const chatbot = document.getElementById("chatbot");
+            chatbot.style.display = chatbotOpen ? "none" : "flex";
+            chatbotOpen = !chatbotOpen;
+            if (chatbotOpen) greetUser();
+        }
+
+        function toggleFullscreen() {
+            const chatbot = document.getElementById("chatbot");
+            const fullScreenBtn = document.getElementById("fullscreen-btn");
+
+            if (!fullScreen) {
+                chatbot.style.width = "100%";
+                chatbot.style.height = "100%";
+                fullScreenBtn.classList.remove("fa-expand");
+                fullScreenBtn.classList.add("fa-compress");
+            } else {
+                chatbot.style.width = "50%";
+                chatbot.style.height = "100%";
+                fullScreenBtn.classList.remove("fa-compress");
+                fullScreenBtn.classList.add("fa-expand");
+            }
+
+            fullScreen = !fullScreen;
+        }
+
+        function greetUser() {
+            addMessage("Chatbot", "Hey! Ask me anything or click below to book tickets.");
+            addButtons(["Book Tickets"], handleBookingStart);
+        }
+
+        function addMessage(sender, text) {
+            const chatMessages = document.getElementById("chat-messages");
+            const messageElement = document.createElement("div");
+            messageElement.innerHTML = `<strong>${sender}:</strong> ${text}`;
+            chatMessages.appendChild(messageElement);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function addButtons(options, callback) {
+            const chatMessages = document.getElementById("chat-messages");
+            const buttonContainer = document.createElement("div");
+            buttonContainer.classList.add("chat-buttons");
+            options.forEach(option => {
+                const button = document.createElement("button");
+                button.textContent = option;
+                button.onclick = () => callback(option);
+                buttonContainer.appendChild(button);
+            });
+            chatMessages.appendChild(buttonContainer);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function sendMessage() {
+            const userInput = document.getElementById("user-input").value.trim().toLowerCase();
+            document.getElementById("user-input").value = "";
+            if (!userInput) return;
+            addMessage("You", userInput);
+            
+            if (userInput.includes("book") || userInput.includes("reserve")) {
+                handleBookingStart();
+            } else {
+                addMessage("Chatbot", "I didn't understand that. Please try again or click a button below.");
+            }
+        }
+
+        function handleEnter(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        }
+
+        function handleBookingStart() {
+            addMessage("Chatbot", "Which tournament would you like to book tickets for?");
+            addButtons(["Salford & CO", "VJIM Alumni", "The Cricket Conclave", "Noble Innings"], handleTournamentSelection);
+        }
+
+        function handleTournamentSelection(selectedTournament) {
+            tournament = selectedTournament;
+            addMessage("You", selectedTournament);
+            addMessage("Chatbot", "Great choice! What type of seat would you like?");
+            addButtons(["VIP", "Premium", "Normal"], handleSeatSelection);
+        }
+
+        function handleSeatSelection(selectedSeat) {
+            seatType = selectedSeat;
+            addMessage("You", selectedSeat);
+            askNumberOfPeople();
+        }
+
+        function askNumberOfPeople() {
+            addMessage("Chatbot", "How many people?");
+            addButtons(["1", "2", "3", "4", "Custom"], handlePeopleSelection);
+        }
+
+        function handlePeopleSelection(selectedPeople) {
+            if (selectedPeople === "Custom") {
+                askCustomPeople();
+            } else {
+                numberOfPeople = selectedPeople;
+                addMessage("You", selectedPeople);
+                redirectToBookingPage();
+            }
+        }
+
+        function askCustomPeople() {
+            addMessage("Chatbot", "Please enter the number of people:");
+            const inputField = document.getElementById("user-input");
+            inputField.focus();
+            
+            inputField.onkeypress = function (event) {
+                if (event.key === "Enter") {
+                    let customValue = inputField.value.trim();
+                    if (!isNaN(customValue) && customValue > 0) {
+                        numberOfPeople = customValue;
+                        addMessage("You", customValue);
+                        redirectToBookingPage();
+                    } else {
+                        addMessage("Chatbot", "Please enter a valid number.");
+                    }
+                }
+            };
+        }
+
+        function redirectToBookingPage() {
+            addMessage("Chatbot", "Redirecting to the booking page...");
+            setTimeout(() => {
+                window.location.href = `book.html?tournament=${tournament}&seatType=${seatType}&members=${numberOfPeople}`;
+            }, 2000);
+        }
+        </script>
+        <script src="script.js"></script>
+        </body>
+        </html>

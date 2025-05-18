@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Tournament Leaderboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #1e293b;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1.8em;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .leaderboard-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px auto;
+            width: 90%;
+        }
+        .leaderboard {
+            background-color: #1e293b;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 45%;
+            color: #ffffff;
+            padding: 20px;
+        }
+        .leaderboard h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #334155;
+        }
+        tr:hover {
+            background-color: #475569;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Sports Club Cricket League 2024</div>
+
+    <div class="leaderboard-container">
+        <!-- Leaderboard 1 -->
+        <div class="leaderboard">
+            <h2>Top Scorers Leaderboard</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>Net Runs Scored</th>
+                        <th>Player (Max Runs)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Thunder Titans</td><td>2564</td><td>Jack Blaze</td></tr>
+                    <tr><td>Blazing Blasters</td><td>2487</td><td>Chris Storm</td></tr>
+                    <tr><td>Mystic Mavericks</td><td>2421</td><td>Aryan Magic</td></tr>
+                    <tr><td>Crimson Crushers</td><td>2376</td><td>Ethan Crimson</td></tr>
+                    <tr><td>Shadow Strikers</td><td>2289</td><td>Leo Shadow</td></tr>
+                    <tr><td>Golden Gladiators</td><td>2205</td><td>Oscar Gold</td></tr>
+                    <tr><td>Frost Falcons</td><td>2150</td><td>Nathan Frost</td></tr>
+                    <tr><td>Phoenix Warriors</td><td>2110</td><td>Victor Phoenix</td></tr>
+                    <tr><td>Steel Stallions</td><td>2065</td><td>Hugo Steel</td></tr>
+                    <tr><td>Emerald Eagles</td><td>1980</td><td>Max Emerald</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Leaderboard 2 -->
+        <div class="leaderboard">
+            <h2>Top Wicket Takers Leaderboard</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>Max Wickets</th>
+                        <th>Player (Most Wickets)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Thunder Titans</td><td>45</td><td>Alex Thunder</td></tr>
+                    <tr><td>Blazing Blasters</td><td>43</td><td>Sam Blaze</td></tr>
+                    <tr><td>Mystic Mavericks</td><td>41</td><td>Zack Mystic</td></tr>
+                    <tr><td>Crimson Crushers</td><td>39</td><td>Mark Crusher</td></tr>
+                    <tr><td>Shadow Strikers</td><td>37</td><td>Liam Shadow</td></tr>
+                    <tr><td>Golden Gladiators</td><td>35</td><td>Jaden Gold</td></tr>
+                    <tr><td>Frost Falcons</td><td>33</td><td>Henry Frost</td></tr>
+                    <tr><td>Phoenix Warriors</td><td>31</td><td>Ryan Phoenix</td></tr>
+                    <tr><td>Steel Stallions</td><td>29</td><td>Oscar Stallion</td></tr>
+                    <tr><td>Emerald Eagles</td><td>27</td><td>Finn Emerald</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

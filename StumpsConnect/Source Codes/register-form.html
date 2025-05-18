@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Match Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style> 
+
+.flex {
+        display: flex;
+        flex-wrap: wrap; /* Adjusts layout for smaller screens */
+    }
+    .gap-4 {
+        gap: 1rem; /* Adds spacing between items */
+    }
+    .mb-4 {
+        margin-bottom: 1rem; /* Adds bottom margin for each row */
+    }
+    .block {
+        display: block; /* Ensures labels appear above inputs */
+    }
+    .w-full {
+        width: 100%; /* Ensures inputs span full width of their container */
+    }
+    .p-2 {
+        padding: 0.5rem; /* Adds padding inside inputs */
+    }
+    .border {
+        border: 1px solid #ccc; /* Adds a border to inputs */
+    }
+    .rounded {
+        border-radius: 4px; /* Rounds input corners */
+    }
+    .text-sm {
+        font-size: 0.875rem; /* Adjusts font size for labels */
+    }
+    .font-bold {
+        font-weight: bold; /* Makes labels bold */
+    }
+    
+.progress {
+    background-color: #e0e0e0; 
+    border-radius: 10px;
+    height: 20px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    background-color: #007C7A;
+    height: 100%;
+    border-radius: 10px;
+    color: transparent; 
+    text-indent: -9999px;
+}
+
+#thankYouMessage {
+    text-align: center;
+    margin-top: 10%;
+    font-size: 2.5em;
+    color: #007C7A;
+    font-family: 'Arial', sans-serif;
+    background-color: #f1f9f1; 
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 128, 0, 0.3);
+    line-height: 1.2;
+}
+
+.alert {
+    background-color: #ffe4e4; 
+    color: #d60000; 
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #d60000; 
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(204, 0, 0, 0.2);
+}
+
+.bg-blue-500 {
+    background-color: #007C7A; 
+    font-weight: bold;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.bg-blue-500:hover {
+    background-color: #005f5b; 
+}
+
+.bg-gray-500 {
+    background-color: #6b7280; 
+    font-weight: bold;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.bg-gray-500:hover {
+    background-color: #4b5563; 
+}
+
+.bg-green-500 {
+    background-color: #007C7A; 
+    font-weight: bold;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.bg-green-500:hover {
+    background-color: #007C7A; 
+}
+
+/* Header and Navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid #ddd;
+}
+
+header a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+header a:hover {
+    color: #009688;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-tab {
+    color: #333;
+    text-decoration: none;
+    margin-right: 20px;
+    position: relative;
+    padding: 10px 15px;
+}
+
+.nav-tab::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #009688;
+    transition: width 0.5s;
+}
+
+.nav-tab:hover::after {
+    width: 100%;
+}
+
+       
+    </style>
+    
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpg">
+        </div>
+        <nav>
+            <a href="index.html" class="nav-tab">HOME</a>
+            <a href="index.html" class="nav-tab">ABOUT US</a>
+            <a href="index.html" class="nav-tab">BLOGS</a>
+            <a href="index.html" class="nav-tab">TOURNAMENTS</a>
+            <a href="index.html" class="nav-tab">CONTACT US</a>
+        </nav>
+    </header>
+
+    <div class="container mx-auto p-4">
+        <h1 class="text-2xl font-bold mb-4 text-center">Cricket Match Registration</h1>
+
+        <div class="step-indicator" id="stepIndicator">Step 1 of 3</div>
+
+        <div class="progress mb-4">
+            <div class="progress-bar" role="progressbar" style="width: 33.33%;" id="progressBar"></div>
+        </div>
+
+        <div id="registrationForm" class="p-4 bg-gray-100 rounded shadow-md">
+            <div id="step1">
+                <h2 class="text-xl font-bold mb-4">Step 1: Team Information</h2>
+                <label for="teamName">Team Name:</label>
+                <input type="text" id="teamName" class="w-full p-2 border mb-2" required>
+                
+                <label for="teamCaptain">Team Captain:</label>
+                <input type="text" id="teamCaptain" class="w-full p-2 border mb-2" required>
+                
+                <label for="ageCategory">Age Category:</label>
+                <select id="ageCategory" class="w-full p-2 border mb-2" required>
+                    <option value="" disabled selected>Select Age Category</option>
+                    <option value="U14">Under 14</option>
+                    <option value="U19">Under 19</option>
+                    <option value="OpenAge">Open Age</option>
+                  
+                </select>
+                
+                <label for="country">Country:</label>
+                <select id="country" class="w-full p-2 border mb-2" required></select>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" class="w-full p-2 border mb-2" required>
+                
+                <label for="phoneNumber">Phone Number:</label>
+                <div class="flex items-center mb-2">
+                    <select id="countryCode" class="p-2 border mr-2" required></select>
+                    <input type="text" id="phoneNumber" class="flex-grow p-2 border" required>
+                </div>
+
+                <button id="next1" class="bg-blue-500 text-white p-2 rounded">Next</button>
+            </div>
+            
+            <div id="step2" style="display:none;">
+                <h2 class="text-xl font-bold mb-4">Step 2: Player Information</h2>
+                <input type="number" id="numberOfPlayers" class="w-full p-2 border mb-2" min="1" value="11" required style="display: none;">
+            
+                <div id="playerInputs"></div>
+            
+                <!-- "Request for a Player" Section -->
+                <div id="requestPlayerSection" style="margin-top: 20px;">
+                    <button id="requestPlayerButton" class="bg-green-500 text-white p-2 rounded">Request for a Player</button>
+                    <div id="requestPlayerForm" style="display: none; margin-top: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                        <label for="numberOfRequestedPlayers">Enter Number of Players Needed:</label>
+                        <input type="number" id="numberOfRequestedPlayers" class="w-full p-2 border mb-2" min="1" required>
+            
+                        <div id="requestedPlayersInputs"></div>
+            <br>
+                        <button id="submitRequestButton" class="bg-blue-500 text-white p-2 rounded">Submit Request</button>
+                    </div>
+                </div><br>
+            
+                <button id="prev1" class="bg-gray-500 text-white p-2 rounded">Previous</button>
+                <button id="next2" class="bg-blue-500 text-white p-2 rounded">Next</button>
+            </div>
+            
+
+            <div id="step3" style="display:none;">
+                <h2 class="text-xl font-bold mb-4">Step 3: Review Information</h2>
+
+                <div id="reviewContent" class="mb-4"></div>
+                <button id="edit" class="bg-gray-500 text-white p-2 rounded">Edit</button>
+                <button id="submit" class="bg-green-500 text-white p-2 rounded">Submit</button>
+            </div>
+
+        </div>
+        <div id="thankYouMessage" style="display: none;">
+            <p><h1>Registration Completed Successfully</h1>
+                <h1>Thank You for Registering!</h1></p>
+        </div>
+        
+    </div>
+
+
+
+    <script>
+       document.addEventListener("DOMContentLoaded", function() {
+        const countryData = [
+            
+  { name: "India", code: "+91" },
+  { name: "Afghanistan", code: "+93" },
+  { name: "Aland Islands", code: "+358" },
+  { name: "Albania", code: "+355" },
+  { name: "Algeria", code: "+213" },
+  { name: "American Samoa", code: "+1684" },
+  { name: "Andorra", code: "+376" },
+  { name: "Angola", code: "+244" },
+  { name: "Anguilla", code: "+1264" },
+  { name: "Antarctica", code: "+672" },
+  { name: "Antigua and Barbuda", code: "+1268" },
+  { name: "Argentina", code: "+54" },
+  { name: "Armenia", code: "+374" },
+  { name: "Aruba", code: "+297" },
+  { name: "Australia", code: "+61" },
+  { name: "Austria", code: "+43" },
+  { name: "Azerbaijan", code: "+994" },
+  { name: "Bahamas", code: "+1242" },
+  { name: "Bahrain", code: "+973" },
+  { name: "Bangladesh", code: "+880" },
+  { name: "Barbados", code: "+1246" },
+  { name: "Belarus", code: "+375" },
+  { name: "Belgium", code: "+32" },
+  { name: "Belize", code: "+501" },
+  { name: "Benin", code: "+229" },
+  { name: "Bermuda", code: "+1441" },
+  { name: "Bhutan", code: "+975" },
+  { name: "Bolivia", code: "+591" },
+  { name: "Bonaire, Sint Eustatius and Saba", code: "+599" },
+  { name: "Bosnia and Herzegovina", code: "+387" },
+  { name: "Botswana", code: "+267" },
+  { name: "Bouvet Island", code: "+55" },
+  { name: "Brazil", code: "+55" },
+  { name: "British Indian Ocean Territory", code: "+246" },
+  { name: "Brunei Darussalam", code: "+673" },
+  { name: "Bulgaria", code: "+359" },
+  { name: "Burkina Faso", code: "+226" },
+  { name: "Burundi", code: "+257" },
+  { name: "Cambodia", code: "+855" },
+  { name: "Cameroon", code: "+237" },
+  { name: "Canada", code: "+1" },
+  { name: "Cape Verde", code: "+238" },
+  { name: "Cayman Islands", code: "+1345" },
+  { name: "Central African Republic", code: "+236" },
+  { name: "Chad", code: "+235" },
+  { name: "Chile", code: "+56" },
+  { name: "China", code: "+86" },
+  { name: "Christmas Island", code: "+61" },
+  { name: "Cocos (Keeling) Islands", code: "+672" },
+  { name: "Colombia", code: "+57" },
+  { name: "Comoros", code: "+269" },
+  { name: "Congo", code: "+242" },
+  { name: "Congo, Democratic Republic of the Congo", code: "+242" },
+  { name: "Cook Islands", code: "+682" },
+  { name: "Costa Rica", code: "+506" },
+  { name: "Cote D'Ivoire", code: "+225" },
+  { name: "Croatia", code: "+385" },
+  { name: "Cuba", code: "+53" },
+  { name: "Curacao", code: "+599" },
+  { name: "Cyprus", code: "+357" },
+  { name: "Czech Republic", code: "+420" },
+  { name: "Denmark", code: "+45" },
+  { name: "Djibouti", code: "+253" },
+  { name: "Dominica", code: "+1767" },
+  { name: "Dominican Republic", code: "+1809" },
+  { name: "Ecuador", code: "+593" },
+  { name: "Egypt", code: "+20" },
+  { name: "El Salvador", code: "+503" },
+  { name: "Equatorial Guinea", code: "+240" },
+  { name: "Eritrea", code: "+291" },
+  { name: "Estonia", code: "+372" },
+  { name: "Ethiopia", code: "+251" },
+  { name: "Falkland Islands (Malvinas)", code: "+500" },
+  { name: "Faroe Islands", code: "+298" },
+  { name: "Fiji", code: "+679" },
+  { name: "Finland", code: "+358" },
+  { name: "France", code: "+33" },
+  { name: "French Guiana", code: "+594" },
+  { name: "French Polynesia", code: "+689" },
+  { name: "French Southern Territories", code: "+262" },
+  { name: "Gabon", code: "+241" },
+  { name: "Gambia", code: "+220" },
+  { name: "Georgia", code: "+995" },
+  { name: "Germany", code: "+49" },
+  { name: "Ghana", code: "+233" },
+  { name: "Gibraltar", code: "+350" },
+  { name: "Greece", code: "+30" },
+  { name: "Greenland", code: "+299" },
+  { name: "Grenada", code: "+1473" },
+  { name: "Guadeloupe", code: "+590" },
+  { name: "Guam", code: "+1671" },
+  { name: "Guatemala", code: "+502" },
+  { name: "Guernsey", code: "+44" },
+  { name: "Guinea", code: "+224" },
+  { name: "Guinea-Bissau", code: "+245" },
+  { name: "Guyana", code: "+592" },
+  { name: "Haiti", code: "+509" },
+  { name: "Heard Island and McDonald Islands", code: "+0" },
+  { name: "Holy See (Vatican City State)", code: "+39" },
+  { name: "Honduras", code: "+504" },
+  { name: "Hong Kong", code: "+852" },
+  { name: "Hungary", code: "+36" },
+  { name: "Iceland", code: "+354" },
+  { name: "Indonesia", code: "+62" },
+  { name: "Iran, Islamic Republic of", code: "+98" },
+  { name: "Iraq", code: "+964" },
+  { name: "Ireland", code: "+353" },
+  { name: "Isle of Man", code: "+44" },
+  { name: "Israel", code: "+972" },
+  { name: "Italy", code: "+39" },
+  { name: "Jamaica", code: "+1876" },
+  { name: "Japan", code: "+81" },
+  { name: "Jersey", code: "+44" },
+  { name: "Jordan", code: "+962" },
+  { name: "Kazakhstan", code: "+7" },
+  { name: "Kenya", code: "+254" },
+  { name: "Kiribati", code: "+686" },
+  { name: "Korea, Democratic People's Republic of", code: "+850" },
+  { name: "Korea, Republic of", code: "+82" },
+  { name: "Kosovo", code: "+383" },
+  { name: "Kuwait", code: "+965" },
+  { name: "Kyrgyzstan", code: "+996" },
+  { name: "Lao People's Democratic Republic", code: "+856" },
+  { name: "Latvia", code: "+371" },
+  { name: "Lebanon", code: "+961" },
+  { name: "Lesotho", code: "+266" },
+  { name: "Liberia", code: "+231" },
+  { name: "Libyan Arab Jamahiriya", code: "+218" },
+  { name: "Liechtenstein", code: "+423" },
+  { name: "Lithuania", code: "+370" },
+  { name: "Luxembourg", code: "+352" },
+  { name: "Macao", code: "+853" },
+  { name: "Macedonia, the Former Yugoslav Republic of", code: "+389" },
+  { name: "Madagascar", code: "+261" },
+  { name: "Malawi", code: "+265" },
+  { name: "Malaysia", code: "+60" },
+  { name: "Maldives", code: "+960" },
+  { name: "Mali", code: "+223" },
+  { name: "Malta", code: "+356" },
+  { name: "Marshall Islands", code: "+692" },
+  { name: "Martinique", code: "+596" },
+  { name: "Mauritania", code: "+222" },
+  { name: "Mauritius", code: "+230" },
+  { name: "Mayotte", code: "+262" },
+  { name: "Mexico", code: "+52" },
+  { name: "Micronesia, Federated States of", code: "+691" },
+  { name: "Moldova, Republic of", code: "+373" },
+  { name: "Monaco", code: "+377" },
+  { name: "Mongolia", code: "+976" },
+  { name: "Montenegro", code: "+382" },
+  { name: "Montserrat", code: "+1664" },
+  { name: "Morocco", code: "+212" },
+  { name: "Mozambique", code: "+258" },
+  { name: "Myanmar", code: "+95" },
+  { name: "Namibia", code: "+264" },
+  { name: "Nauru", code: "+674" },
+  { name: "Nepal", code: "+977" },
+  { name: "Netherlands", code: "+31" },
+  { name: "Netherlands Antilles", code: "+599" },
+  { name: "New Caledonia", code: "+687" },
+  { name: "New Zealand", code: "+64" },
+  { name: "Nicaragua", code: "+505" },
+  { name: "Niger", code: "+227" },
+  { name: "Nigeria", code: "+234" },
+  { name: "Niue", code: "+683" },
+  { name: "Norfolk Island", code: "+672" },
+  { name: "Northern Mariana Islands", code: "+1670" },
+  { name: "Norway", code: "+47" },
+  { name: "Oman", code: "+968" },
+  { name: "Pakistan", code: "+92" },
+  { name: "Palau", code: "+680" },
+  { name: "Palestinian Territory, Occupied", code: "+970" },
+  { name: "Panama", code: "+507" },
+  { name: "Papua New Guinea", code: "+675" },
+  { name: "Paraguay", code: "+595" },
+  { name: "Peru", code: "+51" },
+  { name: "Philippines", code: "+63" },
+  { name: "Pitcairn", code: "+64" },
+  { name: "Poland", code: "+48" },
+  { name: "Portugal", code: "+351" },
+  { name: "Puerto Rico", code: "+1939" },
+  { name: "Qatar", code: "+974" },
+  { name: "Reunion", code: "+262" },
+  { name: "Romania", code: "+40" },
+  { name: "Russian Federation", code: "+7" },
+  { name: "Rwanda", code: "+250" },
+  { name: "Saint Barthelemy", code: "+590" },
+  { name: "Saint Helena", code: "+290" },
+  { name: "Saint Kitts and Nevis", code: "+1869" },
+  { name: "Saint Lucia", code: "+1758" },
+  { name: "Saint Martin", code: "+590" },
+  { name: "Saint Pierre and Miquelon", code: "+508" },
+  { name: "Saint Vincent and the Grenadines", code: "+1784" },
+  { name: "Samoa", code: "+685" },
+  { name: "San Marino", code: "+378" },
+  { name: "Sao Tome and Principe", code: "+239" },
+  { name: "Saudi Arabia", code: "+966" },
+  { name: "Senegal", code: "+221" },
+  { name: "Serbia", code: "+381" },
+  { name: "Seychelles", code: "+248" },
+  { name: "Sierra Leone", code: "+232" },
+  { name: "Singapore", code: "+65" },
+  { name: "Sint Maarten", code: "+1721" },
+  { name: "Slovakia", code: "+421" },
+  { name: "Slovenia", code: "+386" },
+  { name: "Solomon Islands", code: "+677" },
+  { name: "Somalia", code: "+252" },
+  { name: "South Africa", code: "+27" },
+  { name: "South Georgia and the South Sandwich Islands", code: "+500" },
+  { name: "South Sudan", code: "+211" },
+  { name: "Spain", code: "+34" },
+  { name: "Sri Lanka", code: "+94" },
+  { name: "Sudan", code: "+249" },
+  { name: "Suriname", code: "+597" },
+  { name: "Svalbard and Jan Mayen", code: "+47" },
+  { name: "Swaziland", code: "+268" },
+  { name: "Sweden", code: "+46" },
+  { name: "Switzerland", code: "+41" },
+  { name: "Syrian Arab Republic", code: "+963" },
+  { name: "Taiwan, Province of China", code: "+886" },
+  { name: "Tajikistan", code: "+992" },
+  { name: "Tanzania, United Republic of", code: "+255" },
+  { name: "Thailand", code: "+66" },
+  { name: "Timor-Leste", code: "+670" },
+  { name: "Togo", code: "+228" },
+  { name: "Tokelau", code: "+690" },
+  { name: "Tonga", code: "+676" },
+  { name: "Trinidad and Tobago", code: "+1868" },
+  { name: "Tunisia", code: "+216" },
+  { name: "Turkey", code: "+90" },
+  { name: "Turkmenistan", code: "+993" },
+  { name: "Turks and Caicos Islands", code: "+1649" },
+  { name: "Tuvalu", code: "+688" },
+  { name: "Uganda", code: "+256" },
+  { name: "Ukraine", code: "+380" },
+  { name: "United Arab Emirates", code: "+971" },
+  { name: "United Kingdom", code: "+44" },
+  { name: "United States", code: "+1" },
+  { name: "Uruguay", code: "+598" },
+  { name: "Uzbekistan", code: "+998" },
+  { name: "Vanuatu", code: "+678" },
+  { name: "Venezuela", code: "+58" },
+  { name: "Viet Nam", code: "+84" },
+  { name: "Virgin Islands, British", code: "+1284" },
+  { name: "Virgin Islands, U.S.", code: "+1340" },
+  { name: "Wallis and Futuna", code: "+681" },
+  { name: "Western Sahara", code: "+212" },
+  { name: "Yemen", code: "+967" },
+  { name: "Zambia", code: "+260" },
+  { name: "Zimbabwe", code: "+263" }
+];
+    const countrySelect = document.getElementById('country');
+    const countryCodeSelect = document.getElementById('countryCode');
+    countryData.forEach(country => {
+        const countryOption = document.createElement('option');
+        countryOption.value = country.name;
+        countryOption.innerText = country.name;
+        countrySelect.appendChild(countryOption);
+
+        const codeOption = document.createElement('option');
+        codeOption.value = country.code;
+        codeOption.innerText = country.code;
+        countryCodeSelect.appendChild(codeOption);
+    });
+    let playerData = [];
+    document.getElementById('next1').addEventListener('click', function() { 
+    if (!validateStep1()) return;
+    savePlayerData(); 
+    document.getElementById('step1').style.display = 'none';
+    document.getElementById('step2').style.display = 'block';
+    updateProgress(2);
+    generatePlayerInputs();
+});
+
+document.getElementById('next2').addEventListener('click', function() {
+    document.getElementById('step2').style.display = 'none';
+    document.getElementById('step3').style.display = 'block';
+    updateReviewContent();
+    updateProgress(3);
+});
+    document.getElementById('prev1').addEventListener('click', function() {
+        document.getElementById('step2').style.display = 'none';
+        document.getElementById('step1').style.display = 'block';
+        updateProgress(1);
+    });
+    document.getElementById('edit').addEventListener('click', function() {
+        document.getElementById('step3').style.display = 'none';
+        document.getElementById('step1').style.display = 'block';
+        updateProgress(1);
+    });
+    document.getElementById('submit').addEventListener('click', function(event) {
+        event.preventDefault();
+        displaySubmissionData();
+    });
+    function validateStep1() {
+    const teamName = document.getElementById('teamName').value.trim();
+    const teamCaptain = document.getElementById('teamCaptain').value.trim();
+    const ageCategory = document.getElementById('ageCategory').value;
+    const country = document.getElementById('country').value;
+    const email = document.getElementById('email').value.trim();
+    const countryCode = document.getElementById('countryCode').value;
+    const phoneNumber = document.getElementById('phoneNumber').value.trim();
+    if (!teamName || !teamCaptain || !ageCategory || !country || !email || !countryCode || !phoneNumber) {
+        showAlert("Please fill all fields in Step 1 before proceeding.");
+        return false;
+    }
+    return true;
+}
+function validateStep2() {
+    const numberOfPlayers = document.getElementById('numberOfPlayers').value;
+    const playerInputs = document.querySelectorAll('#playerInputs input[type="text"], #playerInputs input[type="number"]');
+    const allFilled = Array.from(playerInputs).every(input => input.value.trim());
+}
+    function savePlayerData() {
+        const playerInputs = document.querySelectorAll('#playerInputs input[type="text"], #playerInputs input[type="number"]');
+        playerData = [];
+        for (let i = 0; i < playerInputs.length; i += 2) {
+            playerData.push({
+                name: playerInputs[i].value,
+                age: playerInputs[i + 1].value
+            });
+        }
+    }
+
+    function generatePlayerInputs() {
+    const numPlayers = parseInt(document.getElementById('numberOfPlayers').value) || 11;
+    const playerInputs = document.getElementById('playerInputs');
+    playerInputs.innerHTML = ''; // Clear previous inputs
+
+    for (let i = 0; i < numPlayers; i++) {
+        // Create a container for each player's input row
+        const playerRow = document.createElement('div');
+        playerRow.classList.add('flex', 'gap-4', 'mb-4'); // Flexbox with spacing between inputs
+
+        // Player Name Label and Input
+        const playerNameContainer = document.createElement('div');
+        playerNameContainer.classList.add('flex-1'); // Allows inputs to take equal space
+        const playerNameLabel = document.createElement('label');
+        playerNameLabel.innerText = `Player ${i + 1} Name:`;
+        playerNameLabel.classList.add('block', 'mb-1', 'text-sm', 'font-bold');
+        const playerNameInput = document.createElement('input');
+        playerNameInput.type = 'text';
+        playerNameInput.classList.add('w-full', 'p-2', 'border', 'rounded');
+        playerNameContainer.appendChild(playerNameLabel);
+        playerNameContainer.appendChild(playerNameInput);
+
+        // Player Age Label and Input
+        const playerAgeContainer = document.createElement('div');
+        playerAgeContainer.classList.add('flex-1'); // Allows inputs to take equal space
+        const playerAgeLabel = document.createElement('label');
+        playerAgeLabel.innerText = `Player ${i + 1} Age:`;
+        playerAgeLabel.classList.add('block', 'mb-1', 'text-sm', 'font-bold');
+        const playerAgeInput = document.createElement('input');
+        playerAgeInput.type = 'number';
+        playerAgeInput.classList.add('w-half', 'p-2', 'border', 'rounded');
+
+        playerAgeContainer.appendChild(playerAgeLabel);
+        playerAgeContainer.appendChild(playerAgeInput);
+
+        // Append Name and Age containers to the row
+        playerRow.appendChild(playerNameContainer);
+        playerRow.appendChild(playerAgeContainer);
+
+        // Append the row to the parent container
+        playerInputs.appendChild(playerRow);
+    }
+}
+    function updateProgress(step) {
+        const totalSteps = 3;
+        const progressPercent = (step / totalSteps) * 100;
+        document.getElementById('progressBar').style.width = `${progressPercent}%`;
+        document.getElementById('progressBar').innerText = `${progressPercent.toFixed(2)}%`;
+        document.getElementById('stepIndicator').innerText = `Step ${step} of ${totalSteps}`;
+    }
+    function showAlert(message) {
+    const existingAlert = document.querySelector('.alert');
+    if (!existingAlert) {  
+        const alertDiv = document.createElement('div');
+        alertDiv.className = 'alert mb-4 p-2 rounded text-center bg-red-100 text-red-700 border border-red-200';
+        alertDiv.innerText = message;
+
+        const formContainer = document.getElementById('registrationForm');
+        formContainer.insertBefore(alertDiv, formContainer.firstChild);
+
+        setTimeout(() => {
+            alertDiv.remove();
+        }, 30000); 
+    }
+}
+    function updateReviewContent() {
+        const teamName = document.getElementById('teamName').value;
+        const teamCaptain = document.getElementById('teamCaptain').value;
+        const ageCategory = document.getElementById('ageCategory').value;
+        const country = document.getElementById('country').value;
+        const email = document.getElementById('email').value;
+        const countryCode = document.getElementById('countryCode').value;
+        const phoneNumber = document.getElementById('phoneNumber').value;
+
+        let reviewContent = `<p><strong>Team Name:</strong> ${teamName}</p>`;
+        reviewContent += `<p><strong>Team Captain:</strong> ${teamCaptain}</p>`;
+        reviewContent += `<p><strong>Age Category:</strong> ${ageCategory}</p>`;
+        reviewContent += `<p><strong>Country:</strong> ${country}</p>`;
+        reviewContent += `<p><strong>Email:</strong> ${email}</p>`;
+        reviewContent += `<p><strong>Phone:</strong> ${countryCode} ${phoneNumber}</p>`;
+        reviewContent += `<strong><h3>Players:</h3></strong> `;
+
+        const playerInputs = document.querySelectorAll('#playerInputs input[type="text"]');
+        const playerAges = document.querySelectorAll('#playerInputs input[type="number"]');
+        playerInputs.forEach((input, index) => {
+            reviewContent += `<p>Player ${index + 1}: ${input.value}, Age: ${playerAges[index].value}</p>`;
+        });
+
+        document.getElementById('reviewContent').innerHTML = reviewContent;
+    }
+
+    document.getElementById('numberOfPlayers').addEventListener('change', generatePlayerInputs);
+
+    document.getElementById('submit').addEventListener('click', function(event) {
+        event.preventDefault(); 
+        document.getElementById('registrationForm').style.display = 'none'; 
+        document.getElementById('thankYouMessage').style.display = 'block';
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const requestPlayerButton = document.getElementById("requestPlayerButton");
+    const requestPlayerForm = document.getElementById("requestPlayerForm");
+    const numberOfRequestedPlayersInput = document.getElementById("numberOfRequestedPlayers");
+    const requestedPlayersInputs = document.getElementById("requestedPlayersInputs");
+    const submitRequestButton = document.getElementById("submitRequestButton");
+
+    // Show the Request Player Form
+    requestPlayerButton.addEventListener("click", function () {
+        requestPlayerForm.style.display = "block";
+        requestedPlayersInputs.innerHTML = ""; // Clear previous inputs if any
+    });
+
+    // Generate Player Input Fields Based on Number
+    numberOfRequestedPlayersInput.addEventListener("input", function () {
+        const count = parseInt(numberOfRequestedPlayersInput.value) || 0;
+        requestedPlayersInputs.innerHTML = "";
+
+        for (let i = 1; i <= count; i++) {
+            const playerDiv = document.createElement("div");
+            playerDiv.style.marginBottom = "15px";
+
+            playerDiv.innerHTML = `
+                <label>Player ${i} Type:</label>
+                <select class="playerType w-full p-2 border mb-2" data-player-index="${i}">
+                    <option value="">-- Select Player Type --</option>
+                    <option value="batsman">Batsman</option>
+                    <option value="bowler">Bowler</option>
+                    <option value="wicketkeeper">Wicketkeeper</option>
+                    <option value="allrounder">All-Rounder</option>
+                </select>
+                <div class="additionalOptions" id="additionalOptions-${i}" style="margin-top: 10px;"></div>
+
+            `;
+            requestedPlayersInputs.appendChild(playerDiv);
+        }
+
+        // Add Event Listeners for Each Player Type
+        document.querySelectorAll(".playerType").forEach((select) => {
+            select.addEventListener("change", function () {
+                const playerIndex = select.getAttribute("data-player-index");
+                const additionalOptions = document.getElementById(`additionalOptions-${playerIndex}`);
+                additionalOptions.innerHTML = "";
+
+                if (select.value === "batsman") {
+                    additionalOptions.innerHTML = `
+                        <label>Batting Style:</label>
+                        <select class="w-full p-2 border mb-2">
+                            <option value="">-- Select Style --</option>
+                            <option value="left-handed">Left-Handed</option>
+                            <option value="right-handed">Right-Handed</option>
+                        </select>
+                    `;
+                } else if (select.value === "bowler") {
+                    additionalOptions.innerHTML = `
+                        <label>Bowler Type:</label>
+                        <select class="w-full p-2 border mb-2">
+                            <option value="">-- Select Bowler Type --</option>
+                            <option value="spinner">Spinner</option>
+                            <option value="fast">Fast Bowler</option>
+                            <option value="medium-pace">Medium Pace</option>
+                            <option value="leg-spinner">Leg Spinner</option>
+                        </select>
+                    `;
+                }
+            });
+        });
+    });
+
+    // Handle Submit Request
+    submitRequestButton.addEventListener("click", function () {
+        const numberOfRequestedPlayers = numberOfRequestedPlayersInput.value;
+        if (!numberOfRequestedPlayers || numberOfRequestedPlayers <= 0) {
+            alert("Please enter a valid number of players needed.");
+            return;
+        }
+
+        // Log player request details
+        const playersDetails = [];
+        document.querySelectorAll(".playerType").forEach((select, index) => {
+            const playerType = select.value;
+            const additionalOptions = document.getElementById(`additionalOptions-${index + 1}`);
+            const additionalInput = additionalOptions ? additionalOptions.querySelector("select") : null;
+            const additionalDetail = additionalInput ? additionalInput.value : null;
+
+            if (!playerType) {
+                alert(`Please select a player type for Player ${index + 1}`);
+                return;
+            }
+
+            playersDetails.push({ playerType, additionalDetail });
+        });
+
+        console.log("Player Request Submitted:", playersDetails);
+
+        // Update UI
+        requestPlayerButton.style.display = "none";
+        requestPlayerForm.style.display = "none";
+
+        const submittedMessage = document.createElement("div");
+        submittedMessage.innerHTML = `
+            <p class="text-green-500 font-bold">Request Submitted</p>
+            <button id="editRequestButton" class="bg-green-500 text-white p-2 rounded">Edit Request</button>
+        `;
+        document.getElementById("requestPlayerSection").appendChild(submittedMessage);
+
+        // Handle Edit Request
+        document.getElementById("editRequestButton").addEventListener("click", function () {
+            requestPlayerButton.style.display = "block";
+            submittedMessage.remove();
+        });
+    });
+});
+
+document.getElementById("submit").addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default button behavior
+
+    // Create an object to store in localStorage
+let playerType=document.getElementById("playerType").value;
+let bowlerType=document.getElementById("bowlerType").value;
+let ageCategory=document.getElementById("ageCategory").value;
+let TeamName=document.getElementById("TeamName").value;
+let numberOfRequestedPlayers=document.getElementById("numberOfRequestedPlayers").value;
+
+        // Save to localStorage
+        localStorage.setItem("playerRequests","numberOfRequestedPlayers,playerType,bowlerType, ageCategory, TeamName");
+
+        // Redirect to index.html
+        window.location.href = "index.html";
+    });
+
+    document.querySelectorAll(".filter-btn").forEach((button) => {
+        button.addEventListener("click", () => {
+            const category = button.getAttribute("data-category");
+            const cards = document.querySelectorAll(".merch-card");
+
+            cards.forEach((card) => {
+                if (category === "all" || card.getAttribute("data-category") === category) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const hiddenCards = document.querySelectorAll(".hidden-card");
+        const loadMoreBtn = document.querySelector(".load-more1");
+
+        loadMoreBtn.addEventListener("click", () => {
+            const isExpanded = loadMoreBtn.textContent === "Show Less";
+
+            if (isExpanded) {
+                hiddenCards.forEach((card) => {
+                    card.style.display = "none";
+                });
+                loadMoreBtn.textContent = "Show More";
+            } else {
+                hiddenCards.forEach((card) => {
+                    card.style.display = "block";
+                });
+                loadMoreBtn.textContent = "Show Less";
+            }
+        });
+    });
+
+    // Function to edit the request
+    function editRequest() {
+        localStorage.removeItem("playerRequests");
+        location.reload(); // Reload the form
+    }
+        document.getElementById("submit").addEventListener("click", function () {
+            // Set a flag in localStorage
+            localStorage.setItem("showBox", "true");
+
+            // Redirect to the page with the box
+            window.location.href = "index.html"; // Change this to your actual URL
+        });
+
+        document.getElementById("next1").addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const data = {
+        teamName: document.getElementById("teamName").value,
+        teamCaptain: document.getElementById("teamCaptain").value,
+        ageCategory: document.getElementById("ageCategory").value,
+        country: document.getElementById("country").value,
+        email: document.getElementById("email").value,
+        countryCode: document.getElementById("countryCode").value,
+        phoneNumber: document.getElementById("phoneNumber").value
+    };
+
+    console.log("Sending data:", data); // <-- log for debug
+
+    fetch("http://localhost:4000/register", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+})
+
+    .then(res => res.text())
+    .then(msg => alert(msg))
+    .catch(err => alert("Error: " + err));
+});
+</script>
+    
+</body>
+</html>

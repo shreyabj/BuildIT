@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tickets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-container {
+            width: 50%;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="file"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .checkbox-group {
+            margin-top: 10px;
+        }
+
+        .checkbox-group label {
+            font-weight: normal;
+            color: #444;
+        }
+
+        .qr-code-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .qr-code-container img {
+            max-width: 200px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-actions {
+            text-align: center;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h1>Book Tickets</h1>
+        <form action="confo.html" method="post" enctype="multipart/form-data">
+
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Eg. John Doe" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" name="email" placeholder="Eg. example@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Eg. 1234567890" required>
+            </div>
+            <div class="form-group">
+                <label>Seat Type:</label>
+                <div class="checkbox-group">
+                    <label><input type="radio" name="seatType" value="VIP"> VIP Seats (Rs. 1399/-)</label>
+                    <br>
+                    <label><input type="radio" name="seatType" value="Premium"> Premium Seats (Rs. 899/-)</label>
+                    <br>
+                    <label><input type="radio" name="seatType" value="Normal"> Normal Seats (Rs. 499/-)</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="members">Number of tickets:</label>
+                <input type="text" id="members" name="members" min="1" placeholder="Eg. 2" required>
+            </div>
+            <div class="qr-code-container">
+                <h3>Scan to Pay here</h3>
+                <img src="qrimg.png" alt="QR Code for Payment" />
+            </div>
+            <div class="form-group">
+                <label for="paymentProof">Upload Payment Screenshot:</label>
+                <input type="file" id="paymentProof" name="paymentProof" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="transactionId">Transaction ID:</label>
+                <input type="text" id="transactionId" name="transactionId" placeholder="Eg. 123456789012" required>
+            </div>
+            <div class="form-actions">
+                <button type="submit"><a href="confo.html">Book Now</a></button>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    function getQueryParams() {
+        let params = {};
+        let queryString = window.location.search.substring(1);
+        let pairs = queryString.split("&");
+
+        for (let pair of pairs) {
+            let [key, value] = pair.split("=");
+            if (key && value) {
+                params[decodeURIComponent(key)] = decodeURIComponent(value);
+            }
+        }
+        return params;
+    }
+
+    function autofillForm() {
+        let params = getQueryParams();
+
+        if (params["seatType"]) {
+            let seatOptions = document.getElementsByName("seatType");
+            for (let option of seatOptions) {
+                if (option.value === params["seatType"]) {
+                    option.checked = true;
+                    break;
+                }
+            }
+        }
+
+        if (params["members"]) {
+            document.getElementById("members").value = params["members"];
+        }
+    }
+
+    window.onload = autofillForm;
+
+    (function(){
+        emailjs.init("HF1ieB4nYPuSyUgyT"); 
+    })();
+
+    document.querySelector("form").addEventListener("submit", function(event) {
+        event.preventDefault(); 
+
+        let email=document.getElementById("email").value; 
+        console.log("Sending to:", email);
+        emailjs.send("service_1zyld8m","template_v5oakbo", { 
+            email: email 
+        })
+        .then(function(response) {
+            window.location.href="confo.html";
+        }, function(error) {
+            alert("Failed to send confirmation. Try again.");
+        });
+
+        this.reset(); 
+    });
+
+</script>
+</html>
